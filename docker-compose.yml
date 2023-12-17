@@ -4,7 +4,7 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: mysql
+    container_name: mysqlContainer
     restart: unless-stopped
     ports:
       - "3306:3306"
@@ -18,11 +18,16 @@ services:
 
   redis:
     image: redis/redis-stack:latest
-    container_name: redis-stack
+    container_name: redisContainer
     ports:
       - "6379:6379"
       - "8001:8001"
     depends_on: [mysql]
+
+  java:
+    build: .
+    container_name: javaContainer
+    depends_on: [redis]
 
 volumes:
   mysql:
