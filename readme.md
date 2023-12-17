@@ -11,8 +11,25 @@ The command below creates 3 docker containers using Docker-Compose (for mySQL, r
 
 See the speed comparison results in the Docker logs.
 
+```shell
+   docker-compose stop
+```
+```shell
+   docker-compose down
+```
+
 If you want to run the application locally, you should change next lines in Main.java:
 50:  uncomment
 51:  comment out
 119: uncomment
 120: comment out
+The changes mentioned above are due to the fact that it is much more convenient to organize communication between containers by names.
+
+In this case, for ease of testing, the following commands will be useful to you:
+```shell
+   docker stop redisContainer
+   docker rm -f redisContainer
+```
+```shell
+   docker run -d --name redisContainer -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+```
