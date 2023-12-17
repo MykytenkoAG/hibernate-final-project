@@ -13,7 +13,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
     volumes:
-      - ./init/dump-hibernate-final.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./resources/dump-hibernate-final.sql:/docker-entrypoint-initdb.d/dump.sql
       - mysql:/var/lib/mysql
 
   redis:
