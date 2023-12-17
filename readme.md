@@ -25,7 +25,7 @@ If you want to run the application locally, you should change next lines in Main
 120: comment out
 The changes mentioned above are due to the fact that it is much more convenient to organize communication between containers by names.
 
-In this case, for ease of testing, the following commands will be useful to you:
+For testing locally, the following commands will be useful:
 ```shell
    docker stop redisContainer
    docker rm -f redisContainer
